@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>JQuery Functions</title>
+  <link rel="stylesheet" href="jquery_functions.css">
+  <script type="text/javascript" src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+
+      // $('#hide button').click(function() {
+      //   alert('trigger works');
+      // })
+
+      $('#hide button').click(function() {
+        $('#hide .rows-text').hide();
+      })
+
+      $('#show button').click(function() {
+        $('#show .rows-text').show();
+      })
+
+      $('#toggle button').click(function() {
+        $('#toggle .rows-text').toggle(function() {
+
+        });
+      });
+
+      $('#slide-down button').click(function() {
+        $('#slide-down .rows-text').slideDown();
+
+      });
+
+      $('#slide-up button').click(function() {
+        $('#slide-up .rows-text').slideUp();
+
+      });
+
+      $('#fade-in button').click(function() {
+        $('#fade-in .rows-text').fadeIn();
+
+      });
+
+      $('#fade-out button').click(function() {
+        $('#fade-out .rows-text').fadeOut();
+
+      });
+
+      $('#addClass button').click(function() {
+        $('#wrapper').addClass("blue-background");
+
+      });
+
+      $('#after button').click(function() {
+        $('#after p').after("<p>Goodbye</p>");
+
+      });
+
+      $('#before button').click(function() {
+        $('#before p').before("<p>Hello!</p>");
+
+      });
+
+      $('#append button').click(function() {
+        $('#append h2').append("<b> Append Function</b>");
+
+      });
+
+      $('#html button').click(function() {
+        $('#html p').append("<b> To get to the other side...DUH!</b>");
+
+      });
+
+      $('#attr button').click(function() {
+        $('#attr p').attr("font-size", "20");
+
+      });
+
+    });
+  </script>
+</head>
+
+<body>
+  <div id="wrapper">
+    <h2>Note: Refresh your page to reset all functionality</h2>
+
+    <div id="hide" class="rows">
+      <div class="rows-button">
+        <button type="button"> Click me! </button>
+      </div>
+
+      <div class="rows-text">
+        <h2>Hide Function</h2>
+        <p>watch me disapear!</p>
+      </div>
+    </div>
+
+
+    <div id="show" class="rows">
+      <div class="rows-button">
+        <button type="button"> Click me! </button>
+      </div>
+
+      <div class="rows-text" style="display: none;">
+        <h2>Show Function</h2>
+        <p>watch me appear!</p>
+      </div>
+    </div>
+
+    <div id="toggle" class="rows">
+      <div class="rows-button">
+        <button type="button"> Click me! </button>
+      </div>
+
+      <div class="rows-text">
+        <h2>Toggle Function</h2>
+        <p>watch me toggle!</p>
+      </div>
+    </div>
+
+    <div id="slide-down" class="rows">
+      <div class="rows-button">
+        <button type="button"> Click me! </button>
+      </div>
+
+      <div class="rows-text" style="display: none;">
+        <h2>Slide Down Function</h2>
+        <p>watch me slide downward dog!</p>
+      </div>
+    </div>
+
+    <div id="slide-up" class="rows">
+      <div class="rows-button">
+        <button type="button"> Click me! </button>
+      </div>
+
+      <div class="rows-text">
+        <h2>Slide Up Function</h2>
+        <p>watch me slide upward facing dog!</p>
+      </div>
+    </div>
+
+    <div id="fade-in" class="rows">
+      <div class="rows-button">
+        <button type="button"> Click me! </button>
+      </div>
+
+      <div class="rows-text" style="display: none;">
+        <h2>Fade in Function</h2>
+        <p>watch me fade in!</p>
+      </div>
+    </div>
+
+    <div id="fade-out" class="rows">
+      <div class="rows-button">
+        <button type="button"> Click me! </button>
+      </div>
+
+      <div class="rows-text">
+        <h2>Fade out Function</h2>
+        <p>watch me fade outta here!</p>
+      </div>
+    </div>
+
+    <div id="addClass" class="rows">
+      <div class="rows-button">
+        <button type="button"> Click me! </button>
+      </div>
+
+      <div class="rows-text">
+        <h2>addClass Function</h2>
+        <p>"I'm BLUE aba dida ba dai..."</p>
+      </div>
+    </div>
+
+    <div id="after" class="rows">
+      <div class="rows-button">
+        <button type="button"> Click me! </button>
+      </div>
+
+      <div class="rows-text">
+        <h2>After Function</h2>
+        <p>Aloha! Means hello or goodbye?</p>
+      </div>
+    </div>
+
+    <div id="before" class="rows">
+      <div class="rows-button">
+        <button type="button"> Click me! </button>
+      </div>
+
+      <div class="rows-text">
+        <h2>Before Function</h2>
+        <p>Aloha! Means hello or goodbye?</p>
+      </div>
+    </div>
+
+    <div id="append" class="rows">
+      <div class="rows-button">
+        <button type="button"> Click me! </button>
+      </div>
+
+      <div class="rows-text">
+        <h2>Append Function</h2>
+        <p>Let's keep it going...</p>
+      </div>
+    </div>
+
+    <div id="html" class="rows">
+      <div class="rows-button">
+        <button type="button"> Click me! </button>
+      </div>
+
+      <div class="rows-text">
+        <h2>html Function</h2>
+        <p>Why did the chicken cross the road?</p>
+      </div>
+    </div>
+
+    <div id="attr" class="rows">
+      <div class="rows-button">
+        <button type="button"> Click me! </button>
+      </div>
+
+      <div class="rows-text">
+        <h2>attr Function</h2>
+        <p>Think you can read this yet?</p>
+      </div>
+    </div>
+
+
+
+
+
+</body>
+
+</html>
+
+
+</html>

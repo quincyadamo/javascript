@@ -1,0 +1,58 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  padding-top: 20px;
+}
+
+main {
+  width: 75%;
+  margin: 0 auto;
+}
+
+section {
+  padding: 10px;
+  position: fixed;
+  left: 75%;
+  width: 20%;
+  height: 100%;
+  outline: red 10px solid;
+  text-decoration: none;
+}
+
+main, section {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.img-div, img {
+  width: 80px;
+  display: inline-block;
+}
+
+section {
+  text-align: center;
+}
+
+section img {
+  margin-left: 35%;
+}
+
+section p {
+  margin-top: 8px;
+}
+
+h3, ul, p {
+  display: none;
+}
+
+ul li {
+  margin: 10px;
+  list-style-type: none;
+}
+
+h3 {
+  margin-top: 20px;
+}

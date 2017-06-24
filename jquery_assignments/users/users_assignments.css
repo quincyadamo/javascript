@@ -1,0 +1,43 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: block;
+  margin: 8px;
+}
+
+h1 {
+  margin: 10px;
+}
+
+table {
+  display: table;
+  border-collapse: separate;
+  border: 1px black solid;
+  border-spacing: 25px 5px;
+  margin: 10px;
+}
+
+td, th {
+  display: table-cell;
+  vertical-align: inherit;
+}
+
+tr {
+  display: table-row;
+  vertical-align: inherit;
+  border-color: inherit;
+}
+
+thead {
+  display: table-header-group;
+  vertical-align: middle;
+  border-color: inherit;
+  font-weight: bold;
+}
+
+button {
+  margin: 10px;
+}

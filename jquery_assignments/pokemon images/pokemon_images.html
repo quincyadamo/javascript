@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Pokemon Image Assignment</title>
+	<link rel="stylesheet" href="style.css">
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+	</script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			var stop = 151;
+			for (var i = 0; i < stop; i++) {
+				link = 'http://pokeapi.co/media/img/' + (i + 1) + '.png';
+				$('main').append('<div class="img-div"><img src="' + link + '"></div>')
+			}
+
+		});
+	</script>
+</head>
+
+<body>
+	<main>
+
+	</main>
+</body>
+
+</html>

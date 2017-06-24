@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Pokedex</title>
+	<link rel="stylesheet" href="pokedex_style.css">
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+	</script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			var S = 151;
+
+			function img(num) {
+				return 'https://pokeapi.co/media/img/' + num + '.png';
+			}
+
+			for (var i = 1; i <= S; i++) {
+				link = img(i);
+				$('main').append('<div class="img-div"><img num=' + i + ' src="' + link + '"></div>');
+			}
+
+			function displayFromApi(num) {
+				$('section h2').text('Wait for the magic...');
+				$.get('https://pokeapi.co/api/v1/pokemon/' + num + '/',
+					function(res) {
+						$('img[num=' + num + ']').data({
+							'name': res.name,
+							'height': res.height,
+							'weight': res.weight,
+							'types': res.types,
+							'img': img(num)
+						})
+
+						displayData(num);
+					},
+					'json')
+			}
+
+			function displayData(num) {
+				data = $('img[num=' + num + ']').data();
+				$('#name').text(data.name);
+				$('#height').text(data.height);
+				$('#weight').text(data.weight);
+				$('section img').attr('src', data.img);
+				$('#types').children().remove();
+				types = data.types;
+				for (i = 0; i < types.length; i++) {
+					$('#types').append('<li>' + types[i].name + '</li>');
+				}
+				$('section').children().css('display', 'block');
+			}
+			$('main img').click(function() {
+				$('section').children().not('h2').css('display', 'none');
+				num = $(this).attr('num');
+				console.log(num);
+				if ($.isEmptyObject($(this).data())) {
+					displayFromApi(num);
+				} else {
+
+					displayData(num);
+				}
+
+
+			})
+		});
+	</script>
+</head>
+
+<body>
+
+	<main>
+	</main>
+
+	<section>
+		<h2 id="name">Your Very Own Pokedex</h2>
+
+		<img>
+
+		<h3>Height</h3>
+		<p id="height"></p>
+
+		<h3>Weight</h3>
+		<p id="weight"></p>
+
+		<h3>Type(s)</h3>
+		<ul id="types">
+		</ul>
+
+	</section>
+
+</body>
+
+</html>

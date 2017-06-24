@@ -1,0 +1,32 @@
+* {
+  margin: 0;
+  padding: 0;
+  color: black;
+  font-family: sans-serif;
+}
+
+#wrapper {
+  width: 800px;
+  margin: 15px auto;
+}
+
+#top-wrapper {
+  text-align: center;
+}
+
+#top-wrapper img {
+  width: 190px;
+  cursor: pointer;
+}
+
+#description {
+  margin: 20px auto;
+  width: 80%;
+  border: 1px dotted red;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+h1 {
+  text-align: center;
+}

@@ -1,0 +1,28 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0 auto;
+}
+
+section {
+  display: inline-block;
+  margin-left: 40%;
+  margin-top: 5%;
+}
+
+section h4 {
+  padding: 10px 0 10px;
+}
+
+section div {
+  position: relative;
+  left: 180px;
+  bottom: 35px;
+}
+
+div .temp-text {
+  margin-top: 21px;
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Game of Thrones</title>
+  <link rel="stylesheet" href="gameofthrones.css">
+  <script type="text/javascript" src='http://code.jquery.com/jquery-1.10.2.min.js'></script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $(".images").click(function() {
+        var url = "https://anapioficeandfire.com/api/houses/" + $(this).attr("data-houseId");
+        $.get(url, function(response) {
+          var name = response.name;
+          var words = response.words;
+          var titles = response.titles.join(", ");
+
+          $('#name').html(name);
+          $('#words').html(words);
+          $('#titles').html(titles);
+
+        }, 'json');
+      });
+
+    });
+  </script>
+</head>
+
+<body>
+  <div id="wrapper">
+    <h1>Game of Thrones</h1>
+    <section id="top-wrapper">
+      <img src="gameofthrones/stark.jpg" data-houseId='362' class="images" alt=" " style="">
+      <img src="gameofthrones/targaryen.jpg" data-houseId='378' class="images" alt=" " style="">
+      <img src="gameofthrones/lannister.jpg" data-houseId='229' class="images" alt=" " style="">
+      <img src="gameofthrones/baratheon.png" data-houseId='17' class="images" alt=" " style="">
+    </section>
+
+    <section id="description">
+      <h4>House Details</h4> Name:
+      <p id="name"></p>
+      Words:
+      <p id="words"></p>
+      Titles:
+      <p id="titles"></p>
+    </section>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Users Assignment</title>
+  <link rel="stylesheet" href="users_assignments.css">
+  <script type="text/javascript" src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $(document).on('click', '#the-button', function() {
+
+        var formArray = $('#the-form').serializeArray();
+        var resultString = "<tr>"; // initial value and we'll build this up over time
+
+        for (var i = 0; i < formArray.length; i++) {
+
+          resultString = resultString + "<td>";
+          resultString = resultString + formArray[i].value;
+          resultString = resultString + "</td>";
+        }
+        resultString = resultString + "</tr>";
+        $("#the-table").append(resultString);
+        $("#the-form")[0].reset()
+      });
+    });
+  </script>
+
+</head>
+
+<body>
+  <h1>Users Assignment</h1>
+  <table id="the-table">
+    <thead>
+      <tr>
+        <td>First Name</td>
+        <td>Last Name</td>
+        <td>Email Address</td>
+        <td>Contact #</td>
+      </tr>
+    </thead>
+
+  </table>
+
+  <div id='form-wrapper'>
+    <form id='the-form'>
+      <br /> First Name: <input type="text" name="first-name">
+      <br /> Last Name: <input type="text" name="last-name">
+      <br /> Email Address: <input type="email" name="email">
+      <br /> Contact Number: <input type="tel" name="contact">
+      <br />
+    </form>
+
+    <button id="the-button" type="button"> Add User </button>
+  </div>
+</body>
+
+</html>

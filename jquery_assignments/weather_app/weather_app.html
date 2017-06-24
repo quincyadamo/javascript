@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Weather App</title>
+  <link rel="stylesheet" href="weather_style.css">
+  <script type="text/javascript" src='http://code.jquery.com/jquery-1.10.2.min.js'></script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      var token = "f015d5a38aa1da3c7a2c3bafae6072f2";
+      // created string "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&&appid=" + token
+      $('form').submit(function(e) {
+        e.preventDefault();
+        var city = $('#city').val();
+        var url = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial&appid=" + token;
+        $.get(url, function(response) {
+          $('#city-name').html(response.name);
+          $('#temperature').html(response.main.temp);
+        }, 'json');
+        // used e.preventDefault instead of return false so the page doesn't refresh
+      });
+
+    });
+  </script>
+</head>
+
+<body>
+
+  <section>
+    <h2>Weather Forcast App</h2>
+    <h4>Search any city and find out the weather instantly!</h4>
+    <form id="the-form">
+      <input type="text" id="city"><br>
+      <button type="submit"> Search Weather </button>
+    </form>
+    <div>
+      <p class="city-text">
+        City: <span id="city-name"></span>
+      </p>
+      <p class="temp-text">
+        Temperature: <span id="temperature"></span>
+      </p>
+    </div>
+  </section>
+
+</body>
+
+</html>
